@@ -30,3 +30,9 @@ get_temp:
 check_temp:
    path: /temperature/check
    defaults: {_controller: AppBundle:Temperature:check}
+getall_temp:
+   path: /temperature/getall
+   defaults: {_controller: AppBundle:Temperature:getall}
+location_index:
+   path: /location/index
+   defaults: {_controller: AppBundle:Location:index}

@@ -24,5 +24,13 @@ class TemperatureController extends Controller
         $session -> set ('log',$log);
         return new Response('Temperature cheched alnd log peristed succesfully');
     }
-
+    public function getAllAction (Request $request){
+        $session = $request->getSession();
+        $log = $session -> get ('log',array());
+        $result = '';
+        foreach ($log as $item) {
+            $result .= $item. '<br/>';
+        }
+        return new Response($result);
+    }
 }
