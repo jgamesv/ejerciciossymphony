@@ -22,7 +22,6 @@ redirect_permanete_index:
 redirect_externa_index:
     path: /externalredirect/index
     defaults: {_controller: AppBundle:Redirect:externalRedirect}
-get_temp: {
+get_temp: 
    path: "/temperature/{id}"
    defaults: {_controller: AppBundle:Temperature:get}
-}
