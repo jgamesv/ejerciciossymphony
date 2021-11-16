@@ -16,11 +16,13 @@ class TemperatureController extends Controller
         }
     }
 
-    public function checAction (Request $request){
+    public function checkAction (Request $request){
         $session = $request->getSession();
         $log = $session -> get ('log',array());
+
         array_push($log,'Temperature checked at'. date ('l jS \of F Y h:i:s A'));
         $session -> set ('log',$log);
         return new Response('Temperature cheched alnd log peristed succesfully');
     }
+
 }
