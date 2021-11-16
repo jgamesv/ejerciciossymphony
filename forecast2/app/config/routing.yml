@@ -25,3 +25,8 @@ redirect_externa_index:
 get_temp: 
    path: "/temperature/{id}"
    defaults: {_controller: AppBundle:Temperature:get}
+   tequirements:
+      id: \d+
+check_temp:
+   path: /temperature/check
+   defaults: {_controller: AppBundle:Temperature:check}

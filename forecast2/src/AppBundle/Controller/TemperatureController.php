@@ -2,8 +2,9 @@
 
 namespace AppBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class TemperatureController extends Controller
 {
@@ -13,5 +14,13 @@ class TemperatureController extends Controller
     }else {
             return new Response("Register". $id);
         }
+    }
+
+    public function checAction (Request $request){
+        $session = $request->getSession();
+        $log = $session -> get ('log',array());
+        array_push($log,'Temperature checked at'. date ('l jS \of F Y h:i:s A'));
+        $session -> set ('log',$log);
+        return new Response('Temperature cheched alnd log peristed succesfully');
     }
 }
